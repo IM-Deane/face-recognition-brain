@@ -81,6 +81,10 @@ class App extends Component {
 		this.setState({ input: event.target.value });
 	};
 
+	checkEntries = () => {
+		this.setState(this.state.user.entries);
+	};
+
 	onButtonSubmit = () => {
 		this.setState({ imageUrl: this.state.input });
 		app.models
@@ -98,7 +102,7 @@ class App extends Component {
 				this.state.input
 			)
 			.then((response) => {
-				console.log("hi", response);
+				// console.log("hi", response);
 				if (response) {
 					fetch("http://localhost:3000/image", {
 						method: "put",

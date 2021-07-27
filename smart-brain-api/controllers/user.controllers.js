@@ -32,13 +32,7 @@ export const signInUser = (req, res) => {
 	// console.log(bcrypt.compareSync(user.password, password));
 
 	if (email === users[0].email && password === users[0].password) {
-		res.json({
-			id: "123",
-			name: "John",
-			email: "john@gmail.com",
-			entries: 0,
-			joined: new Date(),
-		});
+		res.json(users[0]);
 	} else {
 		res.status(400).json("Error logging in.");
 	}
