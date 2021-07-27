@@ -46,6 +46,7 @@ class App extends Component {
 		};
 	}
 
+	// Set user to state upon successful sign/register
 	loadUser = (data) => {
 		this.setState({
 			user: {

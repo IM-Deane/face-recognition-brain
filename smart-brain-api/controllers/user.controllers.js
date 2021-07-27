@@ -1,5 +1,5 @@
 // Mock user database
-import { users } from "../constants/users.js";
+import { users } from "../constants/user.data.js";
 import bcrypt from "bcryptjs";
 
 export const getUsers = (req, res) => {
@@ -23,7 +23,6 @@ export const getUserProfile = (req, res) => {
 
 export const signInUser = (req, res) => {
 	const { email, password } = req.body;
-	console.log(email, password);
 
 	// Search for user in database
 
@@ -33,7 +32,13 @@ export const signInUser = (req, res) => {
 	// console.log(bcrypt.compareSync(user.password, password));
 
 	if (email === users[0].email && password === users[0].password) {
-		res.json({ id: users[0].id });
+		res.json({
+			id: "123",
+			name: "John",
+			email: "john@gmail.com",
+			entries: 0,
+			joined: new Date(),
+		});
 	} else {
 		res.status(400).json("Error logging in.");
 	}
@@ -49,7 +54,6 @@ export const registerUser = (req, res) => {
 		id: "125",
 		name,
 		email,
-		password,
 		entries: 0,
 		joined: new Date(),
 	});
