@@ -16,11 +16,3 @@ export const users = [
 		joined: new Date(),
 	},
 ];
-
-export const logins = [
-	{
-		id: "987",
-		hash: "",
-		email: "john@gmail.com",
-	},
-];

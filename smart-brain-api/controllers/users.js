@@ -23,6 +23,7 @@ export const getUserProfile = (req, res) => {
 
 export const signInUser = (req, res) => {
 	const { email, password } = req.body;
+	console.log(email, password);
 
 	// Search for user in database
 
@@ -32,7 +33,7 @@ export const signInUser = (req, res) => {
 	// console.log(bcrypt.compareSync(user.password, password));
 
 	if (email === users[0].email && password === users[0].password) {
-		res.json("Successfully signed in");
+		res.json({ id: users[0].id });
 	} else {
 		res.status(400).json("Error logging in.");
 	}
@@ -42,13 +43,13 @@ export const registerUser = (req, res) => {
 	const { email, name, password } = req.body;
 
 	// Hash user password
-	const hashedPassword = bcrypt.hashSync("bacon", 10);
+	// const hashedPassword = bcrypt.hashSync("bacon", 10);
 
 	users.push({
 		id: "125",
 		name,
 		email,
-		password: hashedPassword,
+		password,
 		entries: 0,
 		joined: new Date(),
 	});
