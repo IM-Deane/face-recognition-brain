@@ -1,5 +1,7 @@
 # Smart Brain
 
+![Project Header](https://github.com/IM-Deane/images/blob/main/assets/images/smart-brain-thumbnail.jpg)
+
 [Live Demo](https://smart-brain-im-deane.netlify.app/)
 
 ## Description
