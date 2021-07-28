@@ -1,5 +1,7 @@
 # Smart Brain
 
+[Live Demo](https://smart-brain-im-deane.netlify.app/)
+
 ## Description
 
 This was the final project for the ZTM Academy
