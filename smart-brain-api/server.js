@@ -19,10 +19,10 @@ app.use(users);
 const db = knex({
 	client: "pg",
 	connection: {
-		host: process.env.DB_CONNECTION_URL,
-		user: process.env.DB_CONNECTION_USER,
-		password: process.env.PASSWORD,
-		database: "smart-brain",
+		connectionString: process.env.DATABASE_URL,
+		ssl: {
+			rejectUnauthorized: false,
+		},
 	},
 });
 
