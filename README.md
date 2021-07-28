@@ -7,7 +7,7 @@
 ## Description
 
 This was the final project for the ZTM Academy
-course:[The Complete Web Developer in 2021: Zero to Mastery](https://zerotomastery.io/career-paths/become-a-web-developer).
+course: [The Complete Web Developer in 2021: Zero to Mastery](https://zerotomastery.io/career-paths/become-a-web-developer).
 
 The goal of this project was to create an app that uses AI facial regcognition
 software to detect human faces.
@@ -46,9 +46,9 @@ If you would like to build off of this project, please follow the steps below.
 1. Clone this repo
 2. From the root directory, run `cd smart-brain-api/ && npm install`
 3. Run `npm start`
-4. Then in another terminal, run `cd ../client && npm install`
+4. Then in another terminal, run `cd client && npm install`
 5. Finally, run `npm start`
-6. To use this app, you must add your own API key in the `src/App.js` file to
-   connect to Clarifai.
+6. Note: To use this app, you must add your own API key in the `smart-brain-api/controllers/user.controllers.js` file to
+   connect to Clarifai. It's also advised that you store this key in an environmental variable.
 
 You can grab Clarifai API key [here](https://www.clarifai.com/)
