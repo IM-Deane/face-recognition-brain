@@ -34,7 +34,7 @@ class Register extends React.Component {
 		})
 			.then((response) => response.json())
 			.then((user) => {
-				if (user) {
+				if (user.id) {
 					this.props.loadUser(user);
 					this.props.onRouteChange("home");
 				}
@@ -78,7 +78,7 @@ class Register extends React.Component {
 									Password
 								</label>
 								<input
-									className="b pa2 input-reset ba bg-transparent hover-bg-white hover-black w-100"
+									className="b pa2 input-reset white ba bg-transparent hover-bg-white hover-black w-100"
 									type="password"
 									name="password"
 									id="password"

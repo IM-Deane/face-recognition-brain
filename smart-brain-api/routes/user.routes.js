@@ -8,5 +8,6 @@ router.get("/profile/:id", UsersControllers.getUserProfile);
 router.post("/signin", UsersControllers.signInUser);
 router.post("/register", UsersControllers.registerUser);
 router.put("/image", UsersControllers.updateUserEntries);
+router.post("/imageurl", UsersControllers.handleApiCall);
 
 export default router;

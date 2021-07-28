@@ -1,5 +1,20 @@
 import db from "../server.js";
 import bcrypt from "bcryptjs";
+import Clarifai from "clarifai";
+import dotenv from "dotenv";
+dotenv.config();
+
+// You must add your own API key here from Clarifai.com.
+const app = new Clarifai.App({
+	apiKey: process.env.CLARIFI_API_KEY,
+});
+
+export const handleApiCall = (req, res) => {
+	app.models
+		.predict(Clarifai.FACE_DETECT_MODEL, req.body.input)
+		.then((data) => res.json(data))
+		.catch((err) => res.status(400).json("API call failed."));
+};
 
 export const getUsers = (req, res) => {
 	res.json("Hello from server");
@@ -20,6 +35,13 @@ export const getUserProfile = (req, res) => {
 
 export const signInUser = (req, res) => {
 	const { email, password } = req.body;
+
+	// Validate login attempt
+	if (!email || !password) {
+		return res
+			.status(400)
+			.json("Your submission was incorrect. Please try again.");
+	}
 
 	db.select("email", "hash")
 		.from("login")
@@ -43,6 +65,12 @@ export const signInUser = (req, res) => {
 export const registerUser = (req, res) => {
 	const { email, name, password } = req.body;
 
+	// Validate login attempt
+	if (!email || !name || !password) {
+		return res
+			.status(400)
+			.json("Your submission was incorrect. Please try again.");
+	}
 	// Hash user password
 	const hash = bcrypt.hashSync(password, 10);
 
