@@ -9,7 +9,7 @@
 This was the final project for the ZTM Academy
 course: [The Complete Web Developer in 2021: Zero to Mastery](https://zerotomastery.io/career-paths/become-a-web-developer).
 
-The goal of this project was to create an app that uses AI facial regcognition
+The goal of this project was to create an app that uses AI facial recognition
 software to detect human faces.
 
 ## Features
